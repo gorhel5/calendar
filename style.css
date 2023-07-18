@@ -130,14 +130,41 @@ body {
     border-bottom: 1px groove lightgray;
 }
 
-.prev {
-    width: 10px;
-    margin-right: 20px;
+.calendar__btn {
+    flex-basis: 18px;
+    flex-grow: 0;
+
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    color: white;
+
+    display: flex;
+    cursor: pointer;
 }
 
-.next {
-    width: 10px;
-    margin-left: 20px;
+.calendar__btn:hover,
+.calendar__btn:focus {
+    color: #3C82F9;
+    outline: none;
+}
+
+.calendar__btn-img {
+    width: 50%;
+    aspect-ratio: .5;
+    
+    display: block;
+    
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.header-right-title {
+    margin: 35px;
 }
 
 .header-right-title__text {
@@ -146,37 +173,79 @@ body {
 }
 
 .main-right {
-    display: flex;
-    flex-wrap: nowrap;
-    width: 200px;
-    height: 350px;
-    margin-top: 0;
-    flex-basis: 80%;
+    margin-top: 3.7414966%;
 }
 
-.days-block {
-    margin-top: -20px;
-    margin-left: -15px;
-}
 
-.days-1 {
-    margin-left: -25px;
-}
-
-.days-list li {
-    color: white;
-    font-size: 0.7em;
-    line-height: 60px;
-    text-align: center;
+.calendar__day-names,
+.calendar__days {
+    margin: 25px;
+    padding: 0;
     list-style: none;
+
+    display: flex;
 }
 
-.days-list li:first-child {
-    color: lightgray;
+.calendar__day-name {
+    flex-basis: 0;
+    flex-grow: 1;
+
+    font-size: 15px;
+    line-height: 1.15384615;
+
+    text-align: center; 
+
+    color: #FFFFFF;
+
+    mix-blend-mode: normal; 
+    opacity: 0.6;
+
+    margin: 0;
 }
 
-.last-num li:last-child {
-    color: lightgray;
+.calendar__days {
+    flex-wrap: wrap;
+}
+
+.calendar__day {
+    flex-basis: 13%;
+    flex-grow: 1;
+
+    padding: 2% 0;
+
+    color: #FFFFFF;
+}
+
+.calendar__day a {
+    width: 100%;
+    aspect-ratio: 1;
+
+    color: inherit;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+
+    font-size: 0.8rem;
+    line-height: 1.17241379;
+
+    border-radius: 50%;
+}
+
+.calendar__day--current a,
+.calendar__day a:hover,
+.calendar__day a:focus {
+    background: #3C82F9;
+}
+
+.calendar__day--not-in-month {
+    color: #dad8d8;
+}
+
+.calendar__day--shown {
+    color: #fa4545;
 }
 
 .footer-right {
@@ -237,6 +306,7 @@ body {
     background-color: #FF467E;
     border-radius: 4px;
 }
+
 
 .round {
     display: inline-flex;
